@@ -1,0 +1,470 @@
+/* Soul Forge — Dashboard Plugin Styles */
+/* Uses theme variables for dark/light mode compatibility */
+
+.sf-root {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* ─── Header ──────────────────────────────────────────────────────── */
+.sf-header {
+  margin-bottom: 24px;
+}
+.sf-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-foreground);
+  margin: 0 0 4px 0;
+}
+.sf-subtitle {
+  color: var(--color-muted-foreground);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* ─── Tabs ────────────────────────────────────────────────────────── */
+.sf-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0;
+}
+.sf-tab {
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--color-muted-foreground);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+.sf-tab:hover {
+  color: var(--color-foreground);
+}
+.sf-tab-active {
+  color: var(--color-foreground);
+  border-bottom-color: var(--color-primary);
+}
+
+/* ─── Content ─────────────────────────────────────────────────────── */
+.sf-content {
+  min-height: 400px;
+}
+.sf-hint {
+  color: var(--color-muted-foreground);
+  font-size: 0.875rem;
+  margin-bottom: 16px;
+}
+
+/* ─── Template Grid ───────────────────────────────────────────────── */
+.sf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.sf-template-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 16px;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.sf-template-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+.sf-template-selected {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+.sf-template-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.sf-template-name {
+  font-weight: 600;
+  color: var(--color-foreground);
+  font-size: 0.95rem;
+}
+.sf-template-badge {
+  font-size: 0.7rem;
+}
+.sf-template-desc {
+  color: var(--color-muted-foreground);
+  font-size: 0.85rem;
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+}
+.sf-template-preview {
+  background: var(--color-muted);
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 0.75rem;
+  color: var(--color-muted-foreground);
+  overflow: hidden;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+  max-height: 80px;
+  font-family: var(--font-mono, monospace);
+}
+
+/* ─── Generate Tab ────────────────────────────────────────────────── */
+.sf-textarea {
+  width: 100%;
+  min-height: 140px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-size: 0.9rem;
+  font-family: inherit;
+  resize: vertical;
+  margin-top: 12px;
+  box-sizing: border-box;
+}
+.sf-textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+.sf-textarea::placeholder {
+  color: var(--color-muted-foreground);
+  opacity: 0.6;
+}
+.sf-selected-template {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.sf-clear-btn {
+  background: none;
+  border: none;
+  color: var(--color-muted-foreground);
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 0 4px;
+}
+.sf-clear-btn:hover {
+  color: var(--color-foreground);
+}
+.sf-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+  gap: 8px;
+}
+.sf-generate-btn {
+  min-width: 160px;
+}
+
+/* ─── Preview Tab ─────────────────────────────────────────────────── */
+.sf-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sf-preview-actions {
+  display: flex;
+  gap: 4px;
+}
+.sf-editor {
+  width: 100%;
+  min-height: 400px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-size: 0.85rem;
+  font-family: var(--font-mono, monospace);
+  resize: vertical;
+  box-sizing: border-box;
+  line-height: 1.6;
+}
+.sf-editor:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+/* ─── Preview Render ──────────────────────────────────────────────── */
+.sf-preview {
+  padding: 8px 0;
+  color: var(--color-foreground);
+  line-height: 1.6;
+}
+.sf-preview h2, .sf-preview-h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 20px 0 8px 0;
+  color: var(--color-foreground);
+}
+.sf-preview h3, .sf-preview-h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 16px 0 6px 0;
+  color: var(--color-foreground);
+}
+.sf-preview p, .sf-preview-p {
+  margin: 6px 0;
+  font-size: 0.9rem;
+}
+.sf-preview ul, .sf-preview-list {
+  margin: 6px 0;
+  padding-left: 20px;
+}
+.sf-preview li {
+  margin: 3px 0;
+  font-size: 0.9rem;
+}
+.sf-empty {
+  color: var(--color-muted-foreground);
+  text-align: center;
+  padding: 40px;
+  font-size: 0.9rem;
+}
+.sf-empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--color-muted-foreground);
+}
+.sf-empty-state p {
+  margin-bottom: 16px;
+}
+
+/* ─── Save Section ────────────────────────────────────────────────── */
+.sf-save-section {
+  margin-top: 16px;
+}
+.sf-save-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.sf-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-foreground);
+  white-space: nowrap;
+}
+.sf-select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-size: 0.85rem;
+  min-width: 160px;
+}
+.sf-select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+.sf-save-btn {
+  margin-left: auto;
+}
+
+/* ─── Toast ───────────────────────────────────────────────────────── */
+.sf-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  z-index: 9999;
+  animation: sf-toast-in 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+.sf-toast-success {
+  background: #22c55e;
+  color: #fff;
+}
+.sf-toast-error {
+  background: #ef4444;
+  color: #fff;
+}
+@keyframes sf-toast-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Reference Section ────────────────────────────────────────────── */
+.sf-reference-section {
+  margin-top: 12px;
+}
+.sf-reference-toggle {
+  background: none;
+  border: 1px dashed var(--color-border);
+  border-radius: 6px;
+  padding: 8px 14px;
+  color: var(--color-muted-foreground);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+  width: 100%;
+  text-align: left;
+}
+.sf-reference-toggle:hover {
+  border-color: var(--color-primary);
+  color: var(--color-foreground);
+}
+.sf-reference-box {
+  margin-top: 10px;
+}
+.sf-reference-textarea {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem;
+}
+.sf-input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-size: 0.9rem;
+  font-family: inherit;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+.sf-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+.sf-input::placeholder {
+  color: var(--color-muted-foreground);
+  opacity: 0.6;
+}
+
+/* ─── Community Tab ────────────────────────────────────────────────── */
+.sf-community-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.sf-community-top .sf-hint {
+  margin-bottom: 0;
+}
+.sf-add-form {
+  margin-bottom: 20px;
+}
+.sf-community-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+.sf-community-card {
+  cursor: default;
+}
+.sf-community-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sf-community-name {
+  font-size: 0.95rem;
+  margin: 0;
+}
+.sf-community-actions {
+  display: flex;
+  gap: 4px;
+}
+.sf-community-desc {
+  color: var(--color-muted-foreground);
+  font-size: 0.8rem;
+  margin: 4px 0 0 0;
+}
+.sf-community-preview {
+  background: var(--color-muted);
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 0.72rem;
+  color: var(--color-muted-foreground);
+  overflow: hidden;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+  max-height: 100px;
+  font-family: var(--font-mono, monospace);
+}
+.sf-delete-btn {
+  color: var(--color-muted-foreground);
+  font-size: 1.1rem;
+  padding: 0 6px;
+}
+.sf-delete-btn:hover {
+  color: #ef4444;
+}
+
+/* ─── Save Confirmation ────────────────────────────────────────────── */
+.sf-confirm {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 16px;
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: 8px;
+}
+.sf-confirm-icon {
+  font-size: 1.2rem;
+  color: #22c55e;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.sf-confirm-body {
+  flex: 1;
+}
+.sf-confirm-title {
+  font-weight: 600;
+  color: var(--color-foreground);
+  margin: 0 0 4px 0;
+}
+.sf-confirm-path {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem;
+  color: var(--color-muted-foreground);
+  margin: 0 0 8px 0;
+  background: var(--color-muted);
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+.sf-confirm-explain {
+  font-size: 0.85rem;
+  color: var(--color-muted-foreground);
+  margin: 0;
+  line-height: 1.5;
+}
+.sf-confirm-explain code {
+  background: var(--color-muted);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+.sf-confirm-close {
+  background: none;
+  border: none;
+  color: var(--color-muted-foreground);
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0;
+  flex-shrink: 0;
+}
+.sf-confirm-close:hover {
+  color: var(--color-foreground);
+}

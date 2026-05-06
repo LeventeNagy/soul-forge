@@ -1,0 +1,14 @@
+{
+  "name": "soul-forge",
+  "label": "Soul Forge",
+  "description": "Generate and customize SOUL.MD persona files for your Hermes agent",
+  "icon": "Sparkles",
+  "version": "1.0.0",
+  "tab": {
+    "path": "/soul-forge",
+    "position": "after:profiles"
+  },
+  "entry": "dist/index.js",
+  "css": "dist/style.css",
+  "api": "plugin_api.py"
+}
