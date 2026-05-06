@@ -1,3 +1,4 @@
 name: soul-forge
+init: __init__.py
 version: 1.0.0
 description: "Generate and customize SOUL.MD persona files for your Hermes agent"
